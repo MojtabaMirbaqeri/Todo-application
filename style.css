@@ -1,0 +1,136 @@
+:root {
+  --headbg: url(./images/bg-mobile-light.jpg);
+  --text-color: #000000;
+  --body-bg: #f6f6f8;
+  --tasks-bg: #ffffff;
+}
+:root .dark-theme {
+  --headbg: url(./images/bg-mobile-dark.jpg);
+  --text-color: #d1d3ea;
+  --body-bg: #161620;
+  --tasks-bg: #25273c;
+}
+
+body {
+  font-family: "Josefin Sans";
+  height: 100dvh;
+  background-color: var(--body-bg);
+  background-image: var(--headbg);
+  background-repeat: no-repeat;
+  background-size: 100% 25%;
+  font-size: 16px;
+}
+
+* {
+  line-height: 0.9rem !important;
+}
+
+#container {
+  color: var(--text-color);
+  max-width: 750px;
+}
+
+.box-shadow {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header */
+#header img {
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(0px 0px 10px rgba(175, 175, 175, 0.641));
+}
+
+#header h1 {
+  text-shadow: 0 0 15px rgba(175, 175, 175, 0.641);
+}
+
+#header img:hover {
+  cursor: pointer;
+}
+
+/* input */
+#input-container input {
+  background-color: var(--tasks-bg);
+  color: var(--text-color);
+}
+
+#input-container input::placeholder {
+  color: rgb(133, 133, 133);
+}
+
+#input-container .check-bullet {
+  left: 15px;
+}
+
+/* tasks */
+#tasks-container {
+  background-color: var(--tasks-bg);
+  overflow-y: auto;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(156, 162, 156, 0.46);
+}
+
+.check-bullet {
+  width: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgb(133, 133, 133);
+}
+
+.task p {
+  margin-bottom: 0;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+  color: #908c8cb8;
+}
+
+.task.completed .check-bullet {
+  background-image: url(./images/icon-check.svg),
+    linear-gradient(135deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 100% 100%;
+  background-position: center;
+  box-shadow: none;
+}
+
+/* filters */
+#filters-container {
+  background-color: var(--tasks-bg);
+}
+
+.clear-completed:hover,
+#filters-container span:hover {
+  color: #2862ea;
+  cursor: pointer;
+}
+
+#filters-container span.active {
+  color: #2862ea;
+}
+
+@media screen and (min-width: 992px) {
+  :root {
+    --headbg: url(./images/bg-desktop-light.jpg);
+  }
+
+  :root .dark-theme {
+    --headbg: url(./images/bg-desktop-dark.jpg);
+  }
+
+  .task:hover {
+    cursor: pointer;
+    background-color: #99999979;
+  }
+}

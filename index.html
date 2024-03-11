@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700,900" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      class="h-100 px-4 d-flex flex-column gap-4 mx-auto justify-content-lg-center">
+      <div id="header">
+        <h1
+          class="fw-bolder pb-2 pt-5 d-flex justify-content-between align-items-center text-white mb-0">
+          T O D O
+          <img src="images/icon-moon.svg" alt="" id="toggle-theme" />
+        </h1>
+      </div>
+      <div id="input-container" class="position-relative box-shadow">
+        <div class="check-bullet position-absolute translate-middle-y top-50"></div>
+        <input
+          id="task-input"
+          type="text"
+          class="form-control form-control-lg ps-5 border-0"
+          placeholder="Create a new todo..." />
+      </div>
+      <div id="tasks-container" class="rounded-3 box-shadow">
+        <div class="tasks-list d-flex flex-column">
+          <!-- tasks come here -->
+        </div>
+        <div class="p-3 d-flex align-items-center justify-content-between">
+          <span><span class="uncompleted-cont">5</span> items left</span>
+          <span class="clear-completed transition">Clear Completed</span>
+        </div>
+      </div>
+      <div
+        id="filters-container"
+        class="p-3 d-flex justify-content-center gap-3 fs-5 rounded-3 box-shadow">
+        <span class="all-fliter transition active">All</span>
+        <span class="active-filter transition">Active</span>
+        <span class="completed-filter transition">Completed</span>
+      </div>
+      <div id="footer" class="text-center mb-5">
+        <p>Todo list application</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
