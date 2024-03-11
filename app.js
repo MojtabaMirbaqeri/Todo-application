@@ -89,6 +89,10 @@ clearCompletedBtn.addEventListener("click", () => {
 filtersContainer.addEventListener("click", (e) => {
   if (e.target.tagName == "SPAN") {
     let targetClass = e.target.className;
+    let filterBtns = filtersContainer.querySelector("span.active");
+    filterBtns.classList.remove("active");
+    e.target.classList.add("active");
+
     let filteredArray;
     if (targetClass.includes("all-fliter")) {
       filteredArray = tasksArray.filter(() => {
