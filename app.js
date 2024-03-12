@@ -18,6 +18,7 @@ const tasksListConEl = document.querySelector(".tasks-list");
 const inputEl = document.querySelector("#task-input");
 const clearCompletedBtn = document.querySelector(".clear-completed");
 const filtersContainer = document.querySelector("#filters-container");
+const uncompletedCountEl = document.querySelector(".uncompleted-cuont");
 
 toggleThemeEl.addEventListener("click", () => {
   if (document.body.classList.contains("dark-theme")) {
@@ -51,6 +52,7 @@ function createTasksList(array) {
         deleteTask(index);
       });
     });
+    uncompleteCounter(array);
   }
 }
 window.addEventListener("load", () => {
@@ -110,3 +112,15 @@ filtersContainer.addEventListener("click", (e) => {
     createTasksList(filteredArray);
   }
 });
+
+function uncompleteCounter(array) {
+  let count = 0;
+  if (array) {
+    array.forEach((task) => {
+      if (task.isComplete == false) {
+        count++;
+      }
+    });
+  }
+  uncompletedCountEl.innerHTML = count;
+}
